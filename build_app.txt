@@ -1,0 +1,14 @@
+  Determinando los proyectos que se van a restaurar...
+  Todos los proyectos est??n actualizados para la restauraci??n.
+  TicketSupport.Domain -> C:\Users\Alessandro\OneDrive\Documentos\GitHub\llamabara_project\src\TicketSupport.Domain\bin\Debug\net8.0\TicketSupport.Domain.dll
+C:\Users\Alessandro\OneDrive\Documentos\GitHub\llamabara_project\src\TicketSupport.Application\DTOs\CreateUserDto.cs(12,34): error CS0117: 'UserRole' no contiene una definici??n para 'Employee' [C:\Users\Alessandro\OneDrive\Documentos\GitHub\llamabara_project\src\TicketSupport.Application\TicketSupport.Application.csproj]
+
+ERROR al compilar.
+
+C:\Users\Alessandro\OneDrive\Documentos\GitHub\llamabara_project\src\TicketSupport.Application\DTOs\CreateUserDto.cs(12,34): error CS0117: 'UserRole' no contiene una definici??n para 'Employee' [C:\Users\Alessandro\OneDrive\Documentos\GitHub\llamabara_project\src\TicketSupport.Application\TicketSupport.Application.csproj]
+    0 Advertencia(s)
+    1 Errores
+
+Tiempo transcurrido 00:00:01.86
+
+Hay actualizaciones de carga de trabajo disponibles. Ejecute "dotnet workload list" para obtener m??s informaci??n.

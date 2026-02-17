@@ -15,6 +15,8 @@ namespace TicketSupport.Infrastructure
                     b => b.MigrationsAssembly(typeof(AppDbContext).Assembly.FullName)));
 
             services.AddScoped<TicketSupport.Application.Interfaces.ITicketRepository, TicketSupport.Infrastructure.Repositories.TicketRepository>();
+            services.AddScoped<TicketSupport.Application.Interfaces.ITenantRepository, TicketSupport.Infrastructure.Repositories.TenantRepository>();
+            services.AddScoped<TicketSupport.Application.Interfaces.IUserRepository, TicketSupport.Infrastructure.Repositories.UserRepository>();
 
             return services;
         }

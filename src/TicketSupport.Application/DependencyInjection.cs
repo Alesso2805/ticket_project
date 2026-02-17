@@ -11,6 +11,8 @@ namespace TicketSupport.Application
         public static IServiceCollection AddApplication(this IServiceCollection services)
         {
             services.AddScoped<ITicketService, TicketService>();
+            services.AddScoped<ITenantService, TenantService>();
+            services.AddScoped<IUserService, UserService>();
             services.AddValidatorsFromAssemblyContaining<CreateTicketValidator>();
             
             return services;

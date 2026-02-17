@@ -13,10 +13,14 @@ namespace TicketSupport.Application.Services
     public class TicketService : ITicketService
     {
         private readonly ITicketRepository _repository;
+        private readonly ITenantRepository _tenantRepository;
+        private readonly IUserRepository _userRepository;
 
-        public TicketService(ITicketRepository repository)
+        public TicketService(ITicketRepository repository, ITenantRepository tenantRepository, IUserRepository userRepository)
         {
             _repository = repository;
+            _tenantRepository = tenantRepository;
+            _userRepository = userRepository;
         }
 
         public async Task<TicketDto> GetByIdAsync(Guid id, CancellationToken cancellationToken = default)
@@ -39,6 +43,17 @@ namespace TicketSupport.Application.Services
 
         public async Task<Guid> CreateAsync(CreateTicketDto dto, CancellationToken cancellationToken = default)
         {
+            var tenant = await _tenantRepository.GetByIdAsync(dto.TenantId, cancellationToken);
+            if (tenant == null)
+            {
+                throw new NotFoundException(nameof(Tenant), dto.TenantId);
+            }
+
+            var user = await _userRepository.GetByIdAsync(dto.CreatedByUserId, cancellationToken);
+            if (user == null)
+            {
+                throw new NotFoundException(nameof(User), dto.CreatedByUserId);
+            }
             var ticket = new Ticket
             {
                 Title = dto.Title,
