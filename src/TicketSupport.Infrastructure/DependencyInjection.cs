@@ -17,6 +17,7 @@ namespace TicketSupport.Infrastructure
             services.AddScoped<TicketSupport.Application.Interfaces.ITicketRepository, TicketSupport.Infrastructure.Repositories.TicketRepository>();
             services.AddScoped<TicketSupport.Application.Interfaces.ITenantRepository, TicketSupport.Infrastructure.Repositories.TenantRepository>();
             services.AddScoped<TicketSupport.Application.Interfaces.IUserRepository, TicketSupport.Infrastructure.Repositories.UserRepository>();
+            services.AddScoped<TicketSupport.Application.Interfaces.ICommentRepository, TicketSupport.Infrastructure.Repositories.CommentRepository>();
 
             return services;
         }

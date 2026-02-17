@@ -26,8 +26,8 @@ namespace TicketSupport.API.Controllers
             return Ok(ticket);
         }
 
-        [HttpGet]
-        public async Task<ActionResult<IEnumerable<TicketDto>>> GetAll([FromQuery] Guid tenantId, CancellationToken cancellationToken)
+        [HttpGet("tenant/{tenantId}")]
+        public async Task<ActionResult<IEnumerable<TicketDto>>> GetAll(Guid tenantId, CancellationToken cancellationToken)
         {
             if (tenantId == Guid.Empty)
             {

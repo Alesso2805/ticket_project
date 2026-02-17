@@ -13,6 +13,7 @@ namespace TicketSupport.Application
             services.AddScoped<ITicketService, TicketService>();
             services.AddScoped<ITenantService, TenantService>();
             services.AddScoped<IUserService, UserService>();
+            services.AddScoped<ICommentService, CommentService>();
             services.AddValidatorsFromAssemblyContaining<CreateTicketValidator>();
             
             return services;
